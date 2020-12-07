@@ -90,7 +90,7 @@ class _Graphics:
         self.mouse_moved = False
         self.mouse_x = 0
         self.mouse_y = 0
-        self.previous_time = time.clock()
+        self.previous_time = time.process_time()
         # self.after_idle_id = None
         self.after_idle_ids = {}
 
@@ -467,7 +467,7 @@ def wait(seconds=0.033333333):
     graphics.buttons_released = []
     graphics.mouse_moved = False
     graphics.window.update()
-    current_time = time.clock()
+    current_time = time.process_time()
     elapsed_time = current_time - graphics.previous_time
     if elapsed_time < seconds:
         sleep_time = seconds - elapsed_time
